@@ -131,7 +131,7 @@
     <div class="flex-1 flex flex-col min-h-0 bg-gradient-to-l from-teal-500 to-cyan-600">
       <div class="flex-1 flex flex-col pt-5 pb-4 overflow-y-auto">
 
-        <div class="flex items-center flex-shrink-0 px-4 justify-around">
+        <div class="flex items-center flex-shrink-0 px-4 justify-between">
           <a :href="route('profile')" class="flex-shrink-0 w group block">
             <div class="flex items-center">
               <div>
@@ -156,14 +156,8 @@
 
         <nav class="mt-5 flex-1 px-2 space-y-1 border-t p-5">
 
-          <a href="#" class=" hover:bg-gradient-to-l from-teal-600 to-cyan-700 text-white text-lg tracking-tight font-bold group flex items-center px-2 py-2 rounded-md">
+          <a @click="firstMethod" :class="{'bg-gradient-to-l from-teal-600 to-cyan-700': routeName == 'dashboard'}" href="#" class="hover:bg-gradient-to-l from-teal-600 to-cyan-700 text-white text-lg tracking-tight font-bold group flex items-center px-2 py-2 rounded-md">
             <svg class="mr-2" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M8.011 6.215c-1.711-.009-3.86.918-5.499 2.557-.625.625-1.176 1.355-1.601 2.174 1.479-1.119 3.057-1.47 4.903-.434.544-1.437 1.27-2.9 2.197-4.297zm9.785 9.773c-1.516.991-3.007 1.706-4.297 2.21 1.036 1.848.686 3.424-.434 4.902.819-.424 1.549-.975 2.175-1.602 1.644-1.642 2.572-3.796 2.556-5.51zm6.152-15.946c-.412-.028-.816-.042-1.213-.042-8.602 0-13.498 6.558-15.28 11.833l4.728 4.729c5.428-1.946 11.817-6.661 11.817-15.172v-.057c-.002-.42-.019-.851-.052-1.291zm-9.888 9.91c-.391-.391-.391-1.023 0-1.414s1.023-.391 1.414 0 .391 1.023 0 1.414-1.024.39-1.414 0zm2.828-2.828c-.781-.78-.781-2.047 0-2.828s2.048-.781 2.828 0c.781.781.781 2.047 0 2.828s-2.047.781-2.828 0zm-6.534 10.438c-1.492 3.81-5.803 6.208-10.354 6.438.219-4.289 2.657-8.676 6.64-10.153l.805.806c-4.331 2.755-4.653 5.346-4.665 6.575 1.268-.015 4.054-.344 6.778-4.464l.796.798z"/></svg>
-            Initialize
-          </a>
-
-          <a href="#" class=" hover:bg-gradient-to-l from-teal-600 to-cyan-700 text-white text-lg tracking-tight font-bold group flex items-center px-2 py-2 rounded-md">
-            <!-- Heroicon name: outline/home -->
-            <svg class="mr-2" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M12 2c-6.627 0-12 5.373-12 12 0 2.583.575 5.344 2.599 8h18.753c2.023-2.656 2.648-5.417 2.648-8 0-6.627-5.373-12-12-12zm-.758 2.14c.256-.019.51-.029.758-.029s.502.01.758.029v3.115c-.252-.028-.506-.042-.758-.042s-.506.014-.758.042v-3.115zm-5.764 7.978l-2.88-1.193c.158-.479.352-.948.582-1.399l2.879 1.192c-.247.444-.441.913-.581 1.4zm1.217-2.351l-2.203-2.203c.329-.383.688-.743 1.071-1.071l2.203 2.203c-.395.316-.754.675-1.071 1.071zm.793-4.569c.449-.231.919-.428 1.397-.586l1.205 2.874c-.486.142-.954.339-1.397.586l-1.205-2.874zm1.407 13.802c.019-1.151.658-2.15 1.603-2.672l1.502-7.041 1.502 7.041c.943.522 1.584 1.521 1.602 2.672h-6.209zm4.989-11.522l1.193-2.878c.479.156.948.352 1.4.581l-1.193 2.878c-.444-.246-.914-.44-1.4-.581zm2.349 1.218l2.203-2.203c.383.329.742.688 1.071 1.071l-2.203 2.203c-.316-.396-.675-.755-1.071-1.071zm2.259 3.32c-.147-.483-.35-.95-.603-1.39l2.86-1.238c.235.445.437.912.602 1.39l-2.859 1.238z"/></svg>
             Dashboard
           </a>
 
@@ -265,7 +259,9 @@
 
     </div>
   </div>
+
   <div class="md:pl-64 flex flex-col flex-1">
+
     <div class="sticky top-0 z-10 md:hidden pl-1 pt-1 sm:pl-3 sm:pt-3 bg-gray-100">
       <button type="button" class="-ml-0.5 -mt-0.5 h-12 w-12 inline-flex items-center justify-center rounded-md text-gray-500 hover:text-gray-900 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-indigo-500">
         <span class="sr-only">Open sidebar</span>
@@ -275,21 +271,26 @@
         </svg>
       </button>
     </div>
+
     <main class="flex-1">
       <div class="py-6">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 md:px-8">
-          <h1 class="text-2xl font-semibold text-gray-900">Dashboard</h1>
+          <div class="max-w-7xl mx-auto px-4 sm:px-6 md:px-8">
+            <!-- <h1 class="text-2xl font-semibold text-gray-900 capitalize">{{ routeName }}</h1> -->
+            <h1 class="text-4xl font-extrabold tracking-tight text-gray-500 capitalize">{{ routeName }}</h1>
         </div>
+
         <div class="max-w-7xl mx-auto px-4 sm:px-6 md:px-8">
-          <!-- Replace with your content -->
-          <div class="py-4">
-            <div class="border-4 border-dashed border-gray-200 rounded-lg h-96"></div>
-          </div>
-          <!-- /End replace -->
+            <!-- Replace with your content -->
+            <div class="py-4">
+                <slot />
+            </div>
+            <!-- /End replace -->
         </div>
       </div>
     </main>
+
   </div>
+
 </div>
 
 
@@ -297,10 +298,33 @@
 
 <script>
     import { defineComponent } from 'vue'
+    import Sample from './Components/Sample'
 
     export default defineComponent({
         components: {
+            Sample,
+        },
+        name: 'Dashboard',
+        setup() {
 
+            let routeName = route().current()
+            // const routeName = route().current()
+
+            const firstMethod = () => {
+                console.log('this is the first method')
+            }
+
+            return {
+                routeName,
+                firstMethod
+            }
+
+        },
+        created() {
+        },
+        mounted() {
+            // const routeName = route().current()
+            // console.log(this.routeName)
         },
 
     })
