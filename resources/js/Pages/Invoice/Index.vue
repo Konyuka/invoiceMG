@@ -1,6 +1,6 @@
 <template>
 
-    <div class="max-w-7xl mx-auto py-24 px-4 bg-white sm:px-6 lg:px-8">
+    <div class="max-w-7xl mx-auto py-2 px-4 bg-white sm:px-6 lg:px-8">
     <h2 class="text-3xl font-extrabold text-gray-900 sm:text-5xl sm:leading-none sm:tracking-tight lg:text-6xl">Pricing plans for teams of all sizes</h2>
     <p class="mt-6 max-w-2xl text-xl text-gray-500">Choose an affordable plan that's packed with the best features for engaging your audience, creating customer loyalty, and driving sales.</p>
 

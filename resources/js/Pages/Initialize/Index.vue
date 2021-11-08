@@ -1,6 +1,6 @@
 <template>
 <!-- This example requires Tailwind CSS v2.0+ -->
-<div class="bg-gray-50 ">
+<div class="bg-gray-50">
   <div class="relative bg-gradient-to-l from-teal-500 to-cyan-600 rounded-xl ">
     <!-- Overlapping background -->
     <div aria-hidden="true" class="hidden absolute bg-gray-50 w-full h-6 bottom-0 lg:block"></div>
